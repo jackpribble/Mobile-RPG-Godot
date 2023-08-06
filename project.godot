@@ -11,9 +11,27 @@ config_version=5
 [application]
 
 config/name="Mobile RPG"
+run/main_scene="res://battle.tscn"
 config/features=PackedStringArray("4.1", "Forward Plus")
 config/icon="res://icon.svg"
+
+[display]
+
+window/size/viewport_width=90
+window/size/viewport_height=160
+window/size/window_width_override=360
+window/size/window_height_override=640
+window/stretch/mode="canvas_items"
+window/handheld/orientation=1
 
 [dotnet]
 
 project/assembly_name="Mobile RPG"
+
+[gui]
+
+theme/custom="res://default_theme.tres"
+
+[rendering]
+
+textures/canvas_textures/default_texture_filter=0

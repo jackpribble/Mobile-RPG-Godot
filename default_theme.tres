@@ -1,0 +1,36 @@
+[gd_resource type="Theme" load_steps=8 format=3 uid="uid://bsgw335f0xgc8"]
+
+[ext_resource type="FontFile" uid="uid://fk5hre2s17e7" path="res://PixelRPG.ttf" id="1_ffyy0"]
+[ext_resource type="StyleBox" uid="uid://ph1pe2d37lq5" path="res://button_9_frame.tres" id="1_sjqic"]
+[ext_resource type="StyleBox" uid="uid://dwo7023fnqgwj" path="res://button_9_frame_hover.tres" id="2_6qjlv"]
+[ext_resource type="StyleBox" uid="uid://b0y3v3o2c6nn" path="res://button_9_frame_pressed.tres" id="3_aspoy"]
+[ext_resource type="StyleBox" uid="uid://5felx61v8y3e" path="res://panel_9_frame.tres" id="4_ykxmw"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bap1j"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_b581t"]
+
+[resource]
+default_font = ExtResource("1_ffyy0")
+default_font_size = 5
+Button/styles/disabled = ExtResource("1_sjqic")
+Button/styles/focus = SubResource("StyleBoxEmpty_bap1j")
+Button/styles/hover = ExtResource("2_6qjlv")
+Button/styles/normal = ExtResource("1_sjqic")
+Button/styles/pressed = ExtResource("3_aspoy")
+LineEdit/styles/focus = ExtResource("4_ykxmw")
+LineEdit/styles/normal = ExtResource("4_ykxmw")
+LineEdit/styles/read_only = ExtResource("4_ykxmw")
+OptionButton/styles/disabled = ExtResource("1_sjqic")
+OptionButton/styles/disabled_mirrored = ExtResource("1_sjqic")
+OptionButton/styles/focus = SubResource("StyleBoxEmpty_b581t")
+OptionButton/styles/hover = ExtResource("2_6qjlv")
+OptionButton/styles/hover_mirrored = ExtResource("2_6qjlv")
+OptionButton/styles/normal = ExtResource("1_sjqic")
+OptionButton/styles/normal_mirrored = ExtResource("1_sjqic")
+OptionButton/styles/pressed = ExtResource("3_aspoy")
+OptionButton/styles/pressed_mirrored = ExtResource("3_aspoy")
+Panel/styles/panel = ExtResource("4_ykxmw")
+TextEdit/styles/focus = ExtResource("4_ykxmw")
+TextEdit/styles/normal = ExtResource("4_ykxmw")
+TextEdit/styles/read_only = ExtResource("4_ykxmw")
