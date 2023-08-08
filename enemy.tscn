@@ -1,7 +1,53 @@
-[gd_scene load_steps=6 format=3 uid="uid://dw28bawdpcboe"]
+[gd_scene load_steps=8 format=3 uid="uid://dw28bawdpcboe"]
 
 [ext_resource type="Script" path="res://Enemy.gd" id="1_avhp6"]
 [ext_resource type="Texture2D" uid="uid://53b5yt8rtv0a" path="res://Images/Rat.png" id="2_q7yyv"]
+[ext_resource type="PackedScene" uid="uid://cp3ydbuelj2o" path="res://hover_info.tscn" id="3_mpb4d"]
+
+[sub_resource type="Animation" id="Animation_q02ve"]
+resource_name = "Attack"
+length = 0.6
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [Vector2(0, 0), Vector2(0, -4), Vector2(0, 5), Vector2(0, 0)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.4),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"deal_damage"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_36vs2"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-6, 3)]
+}
 
 [sub_resource type="Animation" id="Animation_1s51u"]
 resource_name = "Shake"
@@ -20,23 +66,9 @@ tracks/0/keys = {
 "values": [Vector2(2, 2), Vector2(-3, 2), Vector2(2, -2), Vector2(-3, 0), Vector2(0, 0)]
 }
 
-[sub_resource type="Animation" id="Animation_36vs2"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(-6, 3)]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_2bf56"]
 _data = {
+"Attack": SubResource("Animation_q02ve"),
 "RESET": SubResource("Animation_36vs2"),
 "Shake": SubResource("Animation_1s51u")
 }
@@ -45,7 +77,6 @@ _data = {
 script = ExtResource("1_avhp6")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(-6, 3)
 texture = ExtResource("2_q7yyv")
 
 [node name="HPLabel" type="Label" parent="."]
@@ -58,6 +89,14 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+reset_on_save = false
 libraries = {
 "": SubResource("AnimationLibrary_2bf56")
 }
+
+[node name="HoverInfo" parent="." instance=ExtResource("3_mpb4d")]
+custom_minimum_size = Vector2(12, 12)
+offset_left = -24.0
+offset_top = -15.0
+offset_right = 24.0
+offset_bottom = 15.0

@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://b0e2uiucfh01"]
+
+[ext_resource type="PackedScene" uid="uid://dw28bawdpcboe" path="res://enemy.tscn" id="1_pk44j"]
+
+[node name="Rat" instance=ExtResource("1_pk44j")]
+
+[node name="HoverInfo" parent="." index="3"]
+description = "RAT
+Deals 3 damage."

@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://mfw4rk7871rm"]
+
+[ext_resource type="PackedScene" uid="uid://dw28bawdpcboe" path="res://enemy.tscn" id="1_od6lr"]
+[ext_resource type="Texture2D" uid="uid://b2imw1kydpxt4" path="res://Images/Slime.png" id="2_brwup"]
+
+[node name="Slime" instance=ExtResource("1_od6lr")]
+damage = 2
+hp = 35
+
+[node name="Sprite2D" parent="." index="0"]
+texture = ExtResource("2_brwup")
+
+[node name="HPLabel" parent="." index="1"]
+text = "35HP"
+
+[node name="HoverInfo" parent="." index="3"]
+offset_left = -22.0
+offset_top = -10.0
+offset_right = 20.0
+offset_bottom = 11.0
+description = "SLIME
+Deals 2 damage."

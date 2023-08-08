@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://cxn2316mec81s"]
+
+[ext_resource type="Theme" uid="uid://bsgw335f0xgc8" path="res://default_theme.tres" id="1_fkhki"]
+[ext_resource type="Script" path="res://ActionButton.gd" id="2_4av4q"]
+[ext_resource type="PackedScene" uid="uid://cp3ydbuelj2o" path="res://hover_info.tscn" id="3_miq5h"]
+
+[node name="ActionButton" type="Button"]
+custom_minimum_size = Vector2(32, 13)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -58.0
+offset_bottom = -147.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_fkhki")
+script = ExtResource("2_4av4q")
+
+[node name="HoverInfo" parent="." instance=ExtResource("3_miq5h")]
+layout_mode = 1
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]
